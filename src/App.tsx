@@ -51,14 +51,15 @@ export default function App() {
     <div className="leaflet-container">
       <Map center={position} zoom={7}>
         <TileLayer
-        // url="http://a.tile.stamen.com/toner/{z}/{x}/{y}.png"
+          // url="http://a.tile.stamen.com/toner/{z}/{x}/{y}.png"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         {firePerimeters != null && (
           <GeoJSON data={firePerimeters} style={() => ({ color: '#e53e3e' })} />
         )}
-        {firePerimeters != null && fireMetadata != null &&
+        {firePerimeters != null &&
+          fireMetadata != null &&
           firePerimeters.features.map((incident: any) => {
             const irwinId: string = incident.properties?.IRWINID?.slice(
               1,

@@ -9,3 +9,6 @@
 img:not([src*='.svg']) {
   filter: grayscale(100%) contrast(120%);
 }
+body {
+  margin: 0;
+}
